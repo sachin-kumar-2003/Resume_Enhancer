@@ -1,5 +1,6 @@
 import os
-from fastapi import FastAPI, UploadFile,File,  HTTPException
+from fastapi import FastAPI, Form, UploadFile,File,  HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 from openai import OpenAI
 from pypdf import PdfReader
@@ -12,6 +13,15 @@ from system_prompts import job_description_system_prompt, resume_system_prompt
 load_dotenv()
 
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+
 
 api_key = os.getenv("GEMINI_API_KEY")
 
@@ -24,14 +34,18 @@ client = OpenAI(
 def home():
     return {"message":"welcome to the backend"}
 
+@app.get("/resume.tex")
+def get_resume_template():
+    return {"template": open("resume.tex", "r").read()}
+
 required_skills = ""
 
 
 
 
 
-@app.post("/upload/")
-async def upload_resume(resume : UploadFile = File(...), job_description: str = ""):
+@app.post("/upload")
+async def upload_resume(resume : UploadFile = File(...), job_description: str = Form(...)):
     
     if len(job_description) < 10:
         raise HTTPException(status_code= 400, detail="please upload valid job description")
@@ -92,6 +106,6 @@ async def upload_resume(resume : UploadFile = File(...), job_description: str = 
                 ]
             )
             print(response.choices[0].message.content)
-            return response.choices[0].message.content
+            return {"response": response.choices[0].message.content}
     except Exception as e:
         raise HTTPException(status_code= 500, detail="something went wrong")

@@ -1,0 +1,135 @@
+
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage[sfdefault]{roboto}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Margins
+\addtolength{\oddsidemargin}{-0.65in}
+\addtolength{\evensidemargin}{-0.65in}
+\addtolength{\textwidth}{1.3in}
+\addtolength{\topmargin}{-.65in}
+\addtolength{\textheight}{1.3in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{#1 \vspace{-2pt}}
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape YOUR NAME} \\ \vspace{1pt}
+    \small \faPhone\ +91-XXXXXXXXXX $|$
+    \href{mailto:yourmail@email.com}{\faEnvelope\ yourmail@email.com} $|$ 
+    \href{https://linkedin.com/in/yourprofile}{\faLinkedin\ linkedin.com/in/yourprofile} $|$
+    \href{https://github.com/yourusername}{\faGithub\ GitHub} $|$
+    \href{https://leetcode.com/yourusername}{\faCode\ LeetCode}
+\end{center}
+
+\section{Professional Summary}
+\small{Entry-level software engineer with a strong foundation in programming, data structures, and web technologies. Passionate about building scalable and efficient applications.}
+
+\section{Education}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Your University Name}{City, State}
+{Your Degree, CGPA: X.X/10.0}{Start Year -- End Year}
+
+\resumeSubheading
+{Your College Name}{City, State}
+{Your Degree, CGPA: X.X/10.0}{Start Year -- End Year}
+\resumeSubHeadingListEnd
+
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+\small{\item{
+\textbf{Programming Languages}: C, Python, JavaScript \\
+\textbf{Web Technologies}: React.js, Node.js, Express.js, FastAPI \\
+\textbf{Databases}: MongoDB, MySQL \\
+\textbf{Tools}: Git, GitHub \\
+\textbf{Core Concepts}: Data Structures, Algorithms, OOP, REST APIs
+}}
+\end{itemize}
+
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{\textbf{Project Title} $|$ \emph{Tech Stack} $|$ \href{https://github.com/yourrepo}{\faGithub\ Link}}{Month Year}
+\resumeItemListStart
+\resumeItem{Brief description of the project.}
+\resumeItem{Key feature or technical implementation.}
+\resumeItem{Outcome or impact.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Experience}
+\resumeSubHeadingListStart
+\resumeSubheading
+{Organization / Project Name}{Location}
+{Role / Position}{Duration}
+\resumeItemListStart
+\resumeItem{Describe your responsibility or contribution.}
+\resumeItem{Mention tools, technologies, or results.}
+\resumeItemListEnd
+\resumeSubHeadingListEnd
+
+\section{Certifications \& Achievements}
+\resumeSubHeadingListStart
+\resumeItem{\textbf{Certification Name}: Issuing Organization}
+\resumeItem{\textbf{Achievement}: Short description}
+\resumeSubHeadingListEnd
+
+\end{document}

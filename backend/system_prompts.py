@@ -17,5 +17,7 @@ into the resume content, ensuring that the additions are contextually appropriat
 and enhance the overall quality of the resume.
 Present the enhanced resume in a clear and organized format, maintaining professionalism
 and readability.
-Return only the enhanced resume text without any additional commentary.
+OUTPUT:
+requirements: <comma-separated list of keywords and phrases>
+changes made: <detailed list of changes made to the resume> and share this section with different bullet points.do something like this in frontend side i am using react markedown that part should be in apepear seprate and different
 """
