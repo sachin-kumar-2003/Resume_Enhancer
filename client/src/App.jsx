@@ -34,7 +34,7 @@ const App = () => {
         }
 
       );
-      if(res.data.response == 'None'){
+      if(res.data.response == 'None' || !res.data.response){
         alert("Failed to enhance resume. Please try again ....");
         setLoading(false);
         return;
