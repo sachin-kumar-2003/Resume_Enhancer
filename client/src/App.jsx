@@ -10,7 +10,7 @@ const App = () => {
   
   const [enhancedMarkdown, setEnhancedMarkdown] = useState('');
 
-  
+  const server_url = import.meta.env.VITE_SERVER_URL || "http://127.0.0.1:8000/upload";
 
   const handleSubmit = async () => {
     if (!resumeFile || !jobDescription) {
@@ -24,7 +24,7 @@ const App = () => {
     formdata.append('job_description', jobDescription);
   
     try {
-      const res = await axios.post("http://127.0.0.1:8000/upload", formdata);
+      const res = await axios.post(`${server_url}/upload`, formdata);
       
       setEnhancedMarkdown(res.data.response); 
       setActiveTab('resume');
