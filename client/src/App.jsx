@@ -26,7 +26,14 @@ const App = () => {
     formdata.append('job_description', jobDescription);
   
     try {
-      const res = await axios.post(`${server_url}/upload`, formdata);
+      const res = await axios.post(`${server_url}/upload`, formdata,
+        {
+          headers: {
+            'Content-Type': 'multipart/form-data',
+          },
+        }
+
+      );
       
       setEnhancedMarkdown(res.data.response); 
       setActiveTab('resume');

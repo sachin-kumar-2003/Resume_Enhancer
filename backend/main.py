@@ -38,7 +38,6 @@ def home():
 def get_resume_template():
     return {"template": open("resume.tex", "r").read()}
 
-required_skills = ""
 
 
 
@@ -109,4 +108,4 @@ async def upload_resume(resume : UploadFile = File(...), job_description: str = 
             print(response.choices[0].message.content)
             return {"response": response.choices[0].message.content}
     except Exception as e:
-        raise HTTPException(status_code= 500, detail="something went wrong")
+        raise HTTPException(status_code= 500, detail=str(e))
