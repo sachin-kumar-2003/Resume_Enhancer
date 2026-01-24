@@ -46,7 +46,6 @@ required_skills = ""
 
 @app.post("/upload")
 async def upload_resume(resume : UploadFile = File(...), job_description: str = Form(...)):
-    return {"response": "hello"}
     if len(job_description) < 10:
         raise HTTPException(status_code= 400, detail="please upload valid job description")
     
