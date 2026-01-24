@@ -55,7 +55,7 @@ async def upload_resume(resume : UploadFile = File(...), job_description: str = 
     
     
     try:
-        with tempfile.TemporaryFile(delete=False) as temp:
+        with tempfile.TemporaryFile() as temp:
             shutil.copyfileobj(resume.file, temp)
             temp_path = temp.name
             
