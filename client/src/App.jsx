@@ -9,6 +9,7 @@ const App = () => {
   const [loading, setLoading] = useState(false);
   
   const [enhancedMarkdown, setEnhancedMarkdown] = useState('');
+  const [activeTab, setActiveTab] = useState('resume');
 
   const server_url = import.meta.env.VITE_SERVER_URL;
 
