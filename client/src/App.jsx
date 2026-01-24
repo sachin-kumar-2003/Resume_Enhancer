@@ -12,6 +12,7 @@ const App = () => {
   const [activeTab, setActiveTab] = useState('resume');
 
   const server_url = import.meta.env.VITE_SERVER_URL;
+  // const server_url = 'http://127.0.0.1:8000';
 
   const handleSubmit = async () => {
     if (!resumeFile || !jobDescription) {

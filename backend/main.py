@@ -46,6 +46,7 @@ required_skills = ""
 
 @app.post("/upload")
 async def upload_resume(resume : UploadFile = File(...), job_description: str = Form(...)):
+    
     if len(job_description) < 10:
         raise HTTPException(status_code= 400, detail="please upload valid job description")
     
@@ -58,6 +59,7 @@ async def upload_resume(resume : UploadFile = File(...), job_description: str = 
         with tempfile.TemporaryFile(delete=False) as temp:
             shutil.copyfileobj(resume.file, temp)
             temp_path = temp.name
+            
             
             parsed_text = ""
             if resume.filename.endswith('.pdf'):
