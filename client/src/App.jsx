@@ -34,6 +34,11 @@ const App = () => {
         }
 
       );
+      if(res.data.response == 'None'){
+        alert("Failed to enhance resume. Please try again ....");
+        setLoading(false);
+        return;
+      }
       
       setEnhancedMarkdown(res.data.response); 
       setActiveTab('resume');
